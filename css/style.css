@@ -1,0 +1,111 @@
+:root{
+    /* COLOUR */
+    /* --light : #eddcd2;
+    --dark : #a5a58d;
+    --highlight : #d4a084;
+    --highlightshadow : #ad6f4e;
+    --error : #e9ada2;
+    --success : #99ca9a; */
+
+    --primarycolor : #F0E3CA;
+    --secondarycolor : #FF8303;
+    --thirdcolor : #A35709;
+    --forthcolor : #1B1A17;
+    --error : #ef6a52;
+    --success : #04be04;
+    --lightcolor : #f8f9fa;
+   
+    /* --ligthtext :
+    --darktext
+    --thirdcolortext */
+
+}
+
+/* SETUP */
+
+
+
+    /* Utility Class */
+
+
+/* Backgorund color */
+.primarybg {
+    background-color: var(--primarycolor);
+}
+.secondarybg{
+    background-color: var(--secondarycolor);
+}
+.thirdbg{
+    background-color: var(--thirdcolor);
+}
+.errorbg{
+    background-color: var(--error);
+}
+.successbg{
+    background-color: var(--success);
+}
+
+
+/* Outline */
+.primaryoutline{
+    text-shadow: 0.25rem 0.25rem 0.188rem var(--primarycolor), -1px -1px 1px var(--primarycolor);
+}
+.secondaryoutline{
+    text-shadow: 0.25rem 0.25rem 0.188rem var(--secondarycolor), -1px -1px 1px var(--secondarycolor);
+}
+.thirdoutline{
+    text-shadow: 0.25rem 0.25rem 0.188rem var(--thirdcolor), -1px -1px 1px var(--thirdcolor);
+}
+
+
+/* Button */
+.secondarybtn{
+    background-color: var(--secondarycolor);
+    /* box-shadow: 0.02rem 0.02rem 0.5rem var(--primarycolor); */
+    color: var(--lightcolor);
+}
+.secondarybtn:hover{
+    background-color: var(--primarycolor);
+    box-shadow: 0.02rem 0.02rem 0.5rem var(--forthcolor);
+    color: var(--forthcolor);
+    border: none;
+}
+
+
+/* Text */
+.primarytext{
+    color: var(--primarycolor);
+}
+.secondarytext{
+    color: var(--secondarycolor);
+}
+.thirdtext{
+    color: var(--thirdcolor);
+}
+
+
+/* Input */
+.primaryinput{
+    border: none;
+    box-shadow: 0.02rem 0.02rem 0.5rem var(--thirdcolor);
+    color: var(--primarycolor);
+}
+
+
+
+
+    /* WELCOME */
+
+#welcome h1 {
+    font-size: 4.5rem;
+}
+#welcome p {
+    font-size: 3rem;
+}
+
+/* Card styling */
+
+.card-body {
+    background-color: var(--secondarycolor);
+}
+
