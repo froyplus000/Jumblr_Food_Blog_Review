@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -50,9 +51,28 @@
                         
                     </ul>
 
-                    <form class="d-flex" role="search">
-                        <button class="btn secondarybtn rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#login-modal">LogIn</button>
-                    </form>
+                    
+                    <div class="d-flex">
+                    <?php 
+                      if(isset($_SESSION['userId'])){
+                        echo '
+                        
+                          <form action="include/logout.inc.php" action="POST">
+                            <button type="submit" class="btn secondarybtn rounded-pill" name="logout-submit">Logout</button>
+                          </form>
+                        
+                        ';
+                      } else {
+                        echo '
+                        
+                          <button class="btn secondarybtn rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#login-modal">LogIn</button>
+                        
+                        ';
+                      }
+                    ?>
+                      
+                    </div>
+                    
 
                 </div>
             </div>
@@ -72,7 +92,7 @@
 
         <!-- login.inc.php - Will process the data from this form-->
         <div class="modal-body ">
-          <form action="includes/login.inc.php" method="POST">
+          <form action="./include/login.inc.php" method="POST">
             <div class="mb-3">
               <label for="email" class="col-form-label">Email address:</label>
               <input type="email" class="form-control rounded-pill lightinput" id="email" aria-describedby="emailHelp" name="mailuid" placeholder="Email Address">

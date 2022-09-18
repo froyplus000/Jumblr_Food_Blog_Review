@@ -10,7 +10,50 @@
 <!-- Form -->
 <div class="container p-5 pt-2">
 
-    <form action="">
+    <form action="./include/signup.inc.php" method="POST">
+
+      <!-- SIGNUP MESSAGES -->
+      <?php
+        // 1. VALIDATION: If error/success in $_GET - dsiplay appropriate message
+        if(isset($_GET['error'])){
+
+          // (i) Empty fields validation 
+          if($_GET['error'] == "emptyfields"){
+            $errorMsg = "Please fill in all fields";
+
+          // (ii) Invalid Email AND Uid
+          } else if ($_GET['error'] == "invalidmailuid") {
+            $errorMsg = "Invalid Email and Username";
+
+          // (iii) Invalid Email
+          } else if ($_GET['error'] == "invalidmail") {
+            $errorMsg = "Invalid Email";
+
+          // (iv) Invalid Username
+          } else if ($_GET['error'] == "invaliduid") {
+            $errorMsg = "Invalid Username";
+
+          // (v) Password Confirmation Error
+          } else if ($_GET['error'] == "passwordcheck") {
+            $errorMsg = "Passwords do not match";
+
+          // (vi) Username MATCH in database on save
+          } else if ($_GET['error'] == "usertaken") {
+            $errorMsg = "Username already taken";
+
+          // (vii) Internal server error 
+          } else if ($_GET['error'] == "sqlerror") {
+            $errorMsg = "An internal server error has occurred - please try again later";
+          
+          // Echo Back Danger Alert with the Dynamic Error Message as we definitely have an error!
+          }
+          echo '<div class="alert alert-danger" role="alert">' . $errorMsg . '</div>';
+        
+        // 2. SUCCESS MESSAGE: Successful sign up to DB
+        } else if (isset($_GET['signup']) == "success") {
+          echo '<div class="alert alert-success" role="alert">You have successfully signed up!</div>';    
+        }
+      ?>
     
            <!-- 1. USERNAME -->
       <div class="mb-3">
