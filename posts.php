@@ -1,6 +1,18 @@
 <?php require "./header.php"; ?>
 
+<?php 
 
+    if(isset($_GET['post']) == "success"){
+        echo '
+            <h1>
+                <div class="alert text-light rounded-pill text-center shadow errorbg mt-5" role="alert">
+                    Post had been Created!
+                </div>
+            </h1>
+            ';
+    }
+
+?>
 <!-- Heading -->
 <section class="secondarybg">
     <div class="container text-start text-light">

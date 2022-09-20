@@ -100,7 +100,13 @@ if(isset($_POST['imageUpload-submit'])){
                 <div class="alert text-light rounded-pill text-center shadow successbg mt-5" role="alert">
                 ' . $the_massage . '
                 </div>
-                <h2>copy this name: '. $target_file .'</h2>
+                
+                <form action="./createpost.php" method="GET">
+                <input type="text" class="visually-hidden" name="imgName" value="'. $target_file .'">
+                    <button type="submit" class="btn secondarybtn rounded-pill">
+                        Create Post with this Image : '. $target_file .'
+                    </button>
+                </form>
             </h3>
           ';
             
@@ -110,7 +116,6 @@ if(isset($_POST['imageUpload-submit'])){
         ?>
 
 
-    
 
     
 

@@ -1,5 +1,30 @@
 <?php require "./header.php"; ?>
 
+
+<?php
+
+    // Dynamic error
+    if(isset($_GET['error'])){
+        // Empty Field
+        if($_GET['error'] == "emptyfields"){
+            $errormsg = "Please fill all fields";
+        } else if($_GET['error'] == "sqlerror"){
+            $errormsg = "An internal server error has occurred - please try again later";
+        }
+
+        echo '
+            <h1>
+                <div class="alert text-light rounded-pill text-center shadow errorbg mt-5" role="alert">
+                    '. $errormsg .'
+                </div>
+            </h1>
+            ';
+    }
+    
+
+?>
+
+
 <!-- Heading -->
 <section class="secondarybg">
     <div class="container text-start text-light">
@@ -10,7 +35,7 @@
 <!-- Form -->
 <div class="container p-5 pt-2">
 
-    <form action="">
+    <form action="./include/createpost.inc.php" method="POST">
     
         <!-- 1. RESTAURANT NAME -->
         <div class="mb-3">
@@ -22,7 +47,13 @@
         <!-- 2. IMAGE URL -->
         <div class="mb-3">
             <label for="imageurl" class="form-label">Image File Name</label>
-            <input type="text" class="form-control" name="imageurl" placeholder="Place your image file name here (eg. cat.jpg) " value="" >
+            <input type="text" class="form-control" name="imageurl" placeholder="Place your image file name here (eg. cat.jpg)" value="<?php 
+                if(isset($_GET['imgName'])){
+                    echo $_GET['imgName']; 
+                } else {
+                    echo null;
+                }
+            ?>" >
         </div>
     
         <!-- 3. COMMENT SECTION -->
