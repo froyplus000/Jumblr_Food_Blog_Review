@@ -46,9 +46,6 @@ if(isset($_SESSION['userId']) && isset($_GET['id'])){
         $result = mysqli_stmt_get_result($statement);
         $row = mysqli_fetch_assoc($result);
     }
-} else {
-    header("Location: ./index.php");
-    exit();
 }
 
 //? Continue Step 6 in editpost.inc.php

@@ -39,9 +39,20 @@
                         <li class="nav-item">
                         <a class="nav-link" href="./createpost.php">Create Post</a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="./editpost.php">Edit Post</a>
-                        </li>
+                        <!-- Only Logged In user will see this link -->
+                        <?php 
+                          if(isset($_SESSION['userId'])){
+                            echo '
+
+                            <li class="nav-item">
+                            <a class="nav-link" href="./editpost.php">Edit Post</a>
+                            </li>
+
+                            ';
+                          }
+                        ?>
+                        
+
                         <li class="nav-item">
                         <a class="nav-link" href="./imageupload.php">Image Upload</a>
                         </li>
@@ -71,7 +82,7 @@
                       }
                     ?>
                       
-                    </div>
+                </div>
                     
 
                 </div>
@@ -116,22 +127,22 @@
     <!-- END: NAVBAR -->
 
 
-  <div class="container">
+  <!-- <div class="container">
     <?php
 
 
-        //! Test Display current USER id
+        // //! Test Display current USER id
 
-        if(isset($_SESSION['userId'])){
-          echo "Current User id : " . $_SESSION['userId'] . "</br>";
-          echo "Current User id : " . $_SESSION['userUid'];
-        } else {
-          echo "Current User id : None";
-          echo "Current User Uid : None";
-        }
+        // if(isset($_SESSION['userId'])){
+        //   echo "Current User id : " . $_SESSION['userId'] . "</br>";
+        //   echo "Current User id : " . $_SESSION['userUid'];
+        // } else {
+        //   echo "Current User id : None";
+        //   echo "Current User Uid : None";
+        // }
                       
 
     ?>
 
-  </div>
+  </div> -->
    
