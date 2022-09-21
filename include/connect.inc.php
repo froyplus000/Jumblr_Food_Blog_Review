@@ -12,9 +12,9 @@
 
   // 3. Call connection with DB
   if ($conn->connect_error) {
-    die('<div class="alert alert-warning mt-3" role="alert"><h4>Connection Failed<h4>' . $conn->connect_error . '</div>');
+    die('<div class="alert errorbg text-light text-center mt-3" role="alert"><h4>Connection Failed<h4>' . $conn->connect_error . '</div>');
   } else {
-    echo('<div class="alert alert-success mt-3" role="alert">Connection Successful</div>');
+    echo('<div class="alert successbg text-light text-center mt-3" role="alert">Connection Successful</div>');
   }
 
 

@@ -13,7 +13,7 @@
     if(isset($_GET['post']) == "success"){
         echo '
             <h1>
-                <div class="alert text-light rounded-pill text-center shadow errorbg" role="alert">
+                <div class="alert text-light rounded-pill text-center shadow successbg" role="alert">
                     Post had been Created!
                 </div>
             </h1>
@@ -21,7 +21,35 @@
     }
 
 ?>
+<!-- Dynamic - Post successfully Deleted - deletepost.inc.php -->
+<?php 
+    
+    if(isset($_GET['delete']) == "success"){
+        echo '
+            <h1>
+                <div class="alert text-light rounded-pill text-center shadow successbg" role="alert">
+                    Post had been Delete!
+                </div>
+            </h1>
+            ';
+    }
 
+?>
+
+<!-- Dynamic - Post successfully Edited - editpost.inc.php -->
+<?php 
+    
+    if(isset($_GET['edit']) == "success"){
+        echo '
+            <h1>
+                <div class="alert text-light rounded-pill text-center shadow successbg" role="alert">
+                    Post had been Edited!
+                </div>
+            </h1>
+            ';
+    }
+
+?>
 
 <!-- Query DB for all posts -->
 
@@ -76,8 +104,8 @@
                                             if(isset($_SESSION['userId']) && $_SESSION['userId'] == $row['idUsers']){
                                                 $output .= '
                                                 <div class="admin-btn">
-                                                  <a href="editpost.php?id=' . $row['id'] . '" class="btn primarybtn mt-2">Edit</a>
-                                                  <a href="includes/deletepost.inc.php?id=' . $row['id'] . '" class="btn deletebtn mt-2">Delete</a>
+                                                  <a href="./editpost.php?id=' . $row['id'] . '" class="btn primarybtn mt-2">Edit</a>
+                                                  <a href="./include/deletepost.inc.php?id=' . $row['id'] . '" class="btn deletebtn mt-2">Delete</a>
                                                 </div>';
                                             }
 
