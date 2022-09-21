@@ -10,6 +10,7 @@ if(isset($_POST['post-submit']) && isset($_SESSION['userId'])){
     require './connect.inc.php';
 
     //? 4. Save POST data to variables
+    $currentUserId = $_SESSION['userId'];
     $restaurantName = $_POST['restaurantName'];
     $imageurl = $_POST['imageurl'];
     $comment = $_POST['comment'];
@@ -37,7 +38,7 @@ if(isset($_POST['post-submit']) && isset($_SESSION['userId'])){
         } else {
 
             // Bind User data with statement and Escape string
-            mysqli_stmt_bind_param($statement, "isssds", $_SESSION['userId'], $restaurantName, $imageurl, $comment, $rating, $favouriteDish);
+            mysqli_stmt_bind_param($statement, "isssds", $currentUserId, $restaurantName, $imageurl, $comment, $rating, $favouriteDish);
 
             // Execute SQL statement with User data
             mysqli_stmt_execute($statement);

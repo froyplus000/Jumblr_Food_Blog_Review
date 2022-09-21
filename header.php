@@ -9,7 +9,7 @@
     <!-- Bootstrap 5 CSS Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- Custom CSS link -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./style.css">
 
     <title>Jumblr | Food Blog Review</title>
 
@@ -114,4 +114,24 @@
 
 
     <!-- END: NAVBAR -->
+
+
+  <div class="container">
+    <?php
+
+
+        //! Test Display current USER id
+
+        if(isset($_SESSION['userId'])){
+          echo "Current User id : " . $_SESSION['userId'] . "</br>";
+          echo "Current User id : " . $_SESSION['userUid'];
+        } else {
+          echo "Current User id : None";
+          echo "Current User Uid : None";
+        }
+                      
+
+    ?>
+
+  </div>
    

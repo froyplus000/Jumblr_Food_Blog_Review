@@ -71,6 +71,30 @@
     border: none;
 }
 
+.primarybtn{
+    background-color: var(--primarycolor);
+    /* box-shadow: 0.02rem 0.02rem 0.5rem var(--primarycolor); */
+    color: var(--forthcolor);
+}
+.primarybtn:hover{
+    background-color: var(--thirdcolor);
+    box-shadow: 0.02rem 0.02rem 0.5rem var(--primarycolor);
+    color: var(--lightcolor);
+    border: none;
+}
+
+.deletebtn{
+    background-color: var(--primarycolor);
+    /* box-shadow: 0.02rem 0.02rem 0.5rem var(--primarycolor); */
+    color: var(--forthcolor);
+}
+.deletebtn:hover{
+    background-color: var(--error);
+    box-shadow: 0.02rem 0.02rem 0.5rem var(--primarycolor);
+    color: var(--lightcolor);
+    border: none;
+}
+
 
 /* Text */
 .primarytext{
@@ -108,4 +132,3 @@
 .card-body {
     background-color: var(--secondarycolor);
 }
-
