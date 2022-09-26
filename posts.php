@@ -68,8 +68,8 @@
 
 
 
-<div class="container p-5">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="container">
+    <div class="">
 
         <?php 
             // Check that rows are exist in DB, (if any data in DB) run code in this if statement
@@ -83,8 +83,8 @@
                         $output .=
                         '
 
-                                <div class="col">
-                                    <div class="card shadow text-light" id="'. $row['id'] .'">
+
+                                    <div class="card shadow text-light mb-4" id="'. $row['id'] .'">
                                         <img src="./uploads/'. $row['imageurl'] .'" class="card-img-top post-image" alt="'. $row['restaurantName'] .'">
                                         <div class="card-body">
                                             <h5 class="card-title">Restaurant Name</h5>
@@ -97,6 +97,7 @@
                                             <p class="card-text">'. $row['rating'] .'</p>
                                             <h5 class="card-title">Our Favourites Dish</h5>
                                             <p class="card-text">'. $row['favouriteDish'] .'</p>
+                                            <a href="./uploads/' . $row['imageurl'] . '" class="btn primarybtn mt-2">Full screen Image</a>
                                             ';
 
 
@@ -115,7 +116,7 @@
                                         '
                                         </div>
                                     </div>
-                                </div>
+
                                 
                                 
                         ';

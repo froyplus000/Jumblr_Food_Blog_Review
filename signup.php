@@ -47,11 +47,11 @@
           
           // Echo Back Danger Alert with the Dynamic Error Message as we definitely have an error!
           }
-          echo '<div class="alert alert-danger" role="alert">' . $errorMsg . '</div>';
+          echo '<div class="alert text-light rounded-pill text-center shadow errorbg mt-5" role="alert">' . $errorMsg . '</div>';
         
         // 2. SUCCESS MESSAGE: Successful sign up to DB
         } else if (isset($_GET['signup']) == "success") {
-          echo '<div class="alert alert-success" role="alert">You have successfully signed up!</div>';    
+          echo '<div class="alert text-light rounded-pill text-center shadow successbg mt-5" role="alert">You have successfully signed up!</div>';    
         }
       ?>
     

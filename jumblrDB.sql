@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 11, 2022 at 12:28 PM
+-- Generation Time: Sep 26, 2022 at 08:20 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -37,6 +37,14 @@ CREATE TABLE `posts` (
   `favouriteDish` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `idUsers`, `restaurantName`, `imageurl`, `comment`, `rating`, `favouriteDish`) VALUES
+(6, 1, 'Khon Thai Restaurant', 'thai_restaurant.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 4.7, 'Pad Thai, Green Curry and Papaya Salad'),
+(7, 1, 'Shinkai', 'japanese_restaurant.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 4.5, 'Katsu Don, Shoyu Ramen and Japanese fired rice with Wagyu beef');
+
 -- --------------------------------------------------------
 
 --
@@ -55,7 +63,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`idUsers`, `uidUsers`, `emailUsers`, `pwdUsers`) VALUES
-(1, 'testuser', 'fff@fff.com', '$2y$10$.uQ8UR4WG19dkdMWMayApehpzlXXKbmCgxVKkERV/0yi7ORzJWF0i');
+(1, 'testuser', 'fff@fff.com', '$2y$10$.uQ8UR4WG19dkdMWMayApehpzlXXKbmCgxVKkERV/0yi7ORzJWF0i'),
+(2, 'testuser2', 'fff2@fff.com', '$2y$10$o3G0PF.3zPe/9s2Olqr.2.L.BcQbb97K3tJ02Ne7Hp10.aRfHhiG6');
 
 --
 -- Indexes for dumped tables
@@ -82,13 +91,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

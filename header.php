@@ -9,7 +9,7 @@
     <!-- Bootstrap 5 CSS Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!-- Custom CSS link -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>Jumblr | Food Blog Review</title>
 
@@ -28,7 +28,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
                         <a class="nav-link" href="./index.php">Home</a>
@@ -39,20 +39,6 @@
                         <li class="nav-item">
                         <a class="nav-link" href="./createpost.php">Create Post</a>
                         </li>
-                        <!-- Only Logged In user will see this link -->
-                        <?php 
-                          if(isset($_SESSION['userId'])){
-                            echo '
-
-                            <li class="nav-item">
-                            <a class="nav-link" href="./editpost.php">Edit Post</a>
-                            </li>
-
-                            ';
-                          }
-                        ?>
-                        
-
                         <li class="nav-item">
                         <a class="nav-link" href="./imageupload.php">Image Upload</a>
                         </li>
@@ -60,10 +46,10 @@
                         <a class="nav-link" href="./signup.php">Sign Up</a>
                         </li>
                         
-                    </ul>
+                  </ul>
 
                     
-                    <div class="d-flex">
+                  <div class="d-flex">
                     <?php 
                       if(isset($_SESSION['userId'])){
                         echo '
@@ -81,8 +67,8 @@
                         ';
                       }
                     ?>
-                      
-                </div>
+                  </div>
+                  
                     
 
                 </div>
